@@ -49,11 +49,16 @@
             class="list-group-item list-group-item-action {{ (request() ->is('admin/user*')) ? 'active' : '' }}">
             Users
           </a>
-          <a href="/" class="list-group-item list-group-item-action">
-            Sign Out
+          <a href="route('logout')" onclick=" event.preventDefault(); .closest('form').submit();"
+            class="list-group-item list-group-item-action">
+            {{ __('Log Out') }}
           </a>
         </div>
       </div>
+
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+      </form>
 
       <!-- Page Content -->
       <div id="page-content-wrapper">
@@ -76,7 +81,13 @@
                   </a>
 
                   <div class="dropdown-menu">
-                    <a href="/" class="dropdown-item">Logout</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+                      <x-dropdown-link :href="route('logout')"
+                        onclick=" event.preventDefault(); .closest('form').submit();">
+                        {{ __('Log Out') }}
+                      </x-dropdown-link>
+                    </form>
                   </div>
                 </li>
               </ul>
@@ -85,7 +96,7 @@
               <ul class="navbar-nav d-block d-lg-none">
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    Hi,Jhon Doe
+                    Hi, {{ Auth::user()->name }}
                   </a>
                 </li>
                 <li class="nav-item">
