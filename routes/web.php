@@ -47,12 +47,16 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/checkout', [CheckoutController::class, 'process'])->name('checkout');
 
-    Route::get('/dashboard-page', [DashboardController::class, 'inde
-    x'])->name('dashboard-page');
+    Route::get('/dashboard-page', [DashboardController::class, 'index'])->name('dashboard-page');
 
     Route::get('/dashboard-page/product', [DashboardProductsController::class, 'index'])->name('dashboard-product');
     Route::get('/dashboard-page/product/create', [DashboardProductsController::class, 'create'])->name('dashboard-product-create');
+    Route::post('/dashboard-page/product', [DashboardProductsController::class, 'store'])->name('dashboard-product-store');
     Route::get('/dashboard-page/product/{id}', [DashboardProductsController::class, 'detail'])->name('dashboard-product-detail');
+    Route::post('/dashboard-page/product/{id}', [DashboardProductsController::class, 'update'])->name('dashboard-product-update');
+
+    Route::post('/dashboard-page/product/upload', [DashboardProductsController::class, 'uploadGallery'])->name('dashboard-product-gallery-upload');
+    Route::get('/dashboard-page/product/delete/{id}', [DashboardProductsController::class, 'deletGallery'])->name('dashboard-product-gallery-delete');
 
     Route::get('/dashboard-page/store-setting', [DashboardController::class, 'setting'])->name('dashboard-setting');
 

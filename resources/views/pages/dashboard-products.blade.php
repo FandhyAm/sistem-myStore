@@ -21,68 +21,20 @@ Store Dashboard Product
       </div>
 
       <div class="row mt-4">
+        @foreach ($products as $product)
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <a href="/dashboard-products-details.html" class="card card-dashboard-product d-block">
+          <a href="{{ route('dashboard-product-detail', $product->id) }}" class="card card-dashboard-product d-block">
             <div class="card-body">
-              <img class="w-100 mb-2" src="/images/products-details/product 1.png" alt="">
-              <div class="product-tittle">Shirup marjan </div>
+              <img class="w-100 mb-2" src="{{ Storage::url($product->galleries->first()->photo ?? '') }}" alt="">
+              <div class="product-tittle">{{ $product->name }} </div>
               <div class="product-category">
-                Foods
+                {{ $product->category->name ?? ''}}
               </div>
             </div>
           </a>
-
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <a href="/dashboard-products-details.html" class="card card-dashboard-product d-block">
-            <div class="card-body">
-              <img class="w-100 mb-2" src="/images/products-details/product 2.png" alt="">
-              <div class="product-tittle">Shirup marjan </div>
-              <div class="product-category">
-                Foods
-              </div>
-            </div>
-          </a>
-
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <a href="/dashboard-products-details.html" class="card card-dashboard-product d-block">
-            <div class="card-body">
-              <img class="w-100 mb-2" src="/images/products-details/product 3.png" alt="">
-              <div class="product-tittle">Shirup marjan </div>
-              <div class="product-category">
-                Foods
-              </div>
-            </div>
-          </a>
-
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <a href="/dashboard-products-details.html" class="card card-dashboard-product d-block">
-            <div class="card-body">
-              <img class="w-100 mb-2" src="/images/products-details/product 4.png" alt="">
-              <div class="product-tittle">Shirup marjan </div>
-              <div class="product-category">
-                Foods
-              </div>
-            </div>
-          </a>
-
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <a href="/dashboard-products-details.html" class="card card-dashboard-product d-block">
-            <div class="card-body">
-              <img class="w-100 mb-2" src="/images/products-details/product 5.png" alt="">
-              <div class="product-tittle">Shirup marjan </div>
-              <div class="product-category">
-                Foods
-              </div>
-            </div>
-          </a>
-
-        </div>
+        @endforeach
       </div>
-
     </div>
   </div>
 </div>
