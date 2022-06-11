@@ -41,7 +41,7 @@ Store Dashboard Product Detail
                   <div class="col-md-6">
                     <div class="form-group" v-if="is_store_open">
                       <label for="number">Price</label>
-                      <input type="text" name="price" value="{{ $product->price }}" class="form-control" id="number"/>
+                      <input type="text" name="price" value="{{ $product->price }}" class="form-control" id="number" />
                     </div>
                   </div>
                   <div class="col-md-12">
