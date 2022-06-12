@@ -39,12 +39,12 @@
             Transactions
           </a>
           </a>
-          <a href="{{ route('dashboard-setting') }}"
-            class="list-group-item list-group-item-action {{ (request() ->is('dashboard-page/store-setting')) ? 'active' : '' }}">
+          <a href="{{ route('dashboard-setting-store') }}"
+            class="list-group-item list-group-item-action {{ (request() ->is('/dashboard-page/setting')) ? 'active' : '' }}">
             Store Settings
           </a>
-          <a href="{{ route('dashboard-account') }}"
-            class="list-group-item list-group-item-action {{ (request() ->is('dashboard-page/store-account')) ? 'active' : '' }}">
+          <a href="{{ route('dashboard-setting-account') }}"
+            class="list-group-item list-group-item-action {{ (request() ->is('/dashboard-page/account')) ? 'active' : '' }}">
             My Account
           </a>
           <a href="route('logout')" onclick=" event.preventDefault(); .closest('form').submit();"
@@ -80,7 +80,7 @@
 
                   <div class="dropdown-menu">
                     <a href="{{ route('dashboard-page') }}" class="dropdown-item">Dasbhoard</a>
-                    <a href="{{ route('dashboard-setting') }}" class="dropdown-item">Settings</a>
+                    <a href="{{ route('dashboard-setting-store') }}" class="dropdown-item">Settings</a>
                     <div class="dropdown-divider"></div>
                     <form method="POST" action="{{ route('logout') }}">
                       @csrf

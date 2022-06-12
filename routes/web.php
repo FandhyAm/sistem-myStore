@@ -10,6 +10,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardProductsController;
+use App\Http\Controllers\DashboardSettingController;
 use App\Http\Controllers\DashboardTransactionsController;
 use App\Models\ProductGallery;
 use GuzzleHttp\Middleware;
@@ -58,12 +59,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/dashboard-page/upload', [DashboardProductsController::class, 'uploadGallery'])->name('dashboard-product-gallery-upload');
     Route::get('/dashboard-page/product/delete/{id}', [DashboardProductsController::class, 'deleteGallery'])->name('dashboard-product-gallery-delete');
 
-    Route::get('/dashboard-page/store-setting', [DashboardController::class, 'setting'])->name('dashboard-setting');
-
     Route::get('/dashboard-page/transactions', [DashboardTransactionsController::class, 'transactions'])->name('dashboard-transactions');
     Route::get('/dashboard-page/transactions/{id}', [DashboardTransactionsController::class, 'details'])->name('dashboard-transactions-details');
 
-    Route::get('/dashboard-page/store-account', [DashboardController::class, 'account'])->name('dashboard-account');
+    Route::get('/dashboard-page/setting', [DashboardSettingController::class, 'store'])->name('dashboard-setting-store');
+    Route::get('/dashboard-page/account', [DashboardSettingController::class, 'account'])->name('dashboard-setting-account');
+    Route::post('/dashboard-page/account/{redirect}', [DashboardSettingController::class, 'update'])->name('dashboard-setting-redirect');
 });
 
 // Route admin

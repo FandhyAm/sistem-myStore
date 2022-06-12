@@ -30,15 +30,4 @@ class DashboardController extends Controller
             'customer' => $customer,
         ]);
     }
-
-
-    public function setting()
-    {
-        return view('pages.dashboard-setting');
-    }
-
-    public function account()
-    {
-        return view('pages.dashboard-account');
-    }
 }
