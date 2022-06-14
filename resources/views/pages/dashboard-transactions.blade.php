@@ -25,9 +25,10 @@ Store Dashboard Transactions
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                aria-controls="pills-profile" aria-selected="false">Buy Product</a>
+                aria-controls="pills-profile" aria-selected="true">Buy Product</a>
             </li>
           </ul>
+
           <!-- Sell Product -->
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -52,25 +53,27 @@ Store Dashboard Transactions
                     </div>
                   </div>
                 </div>
+              </a>
+              @endforeach
             </div>
-            </a>
-            @endforeach
 
-          </div>
-          <!-- Buy Product -->
-          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-          @foreach ($buyTransactions as $transaction)
+
+            <!-- Buy Product -->
+            <div class="tab-pane fade show active" id="pills-profile" role="tabpanel"
+              aria-labelledby="pills-profile-tab">
+              @foreach ($buyTransactions as $transaction)
               <a href="{{ route('dashboard-transactions-details', $transaction->id) }}" class="card card-list d-block">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-1">
-                      <img src="{{ Storage::url($transaction->product->galleries->first()->photo ?? '') }}" class="w-100">
+                      <img src="{{ Storage::url($transaction->product->galleries->first()->photo ?? '') }}"
+                        class="w-100">
                     </div>
                     <div class=" col-md-4">
                       {{ $transaction->product->name }}
                     </div>
                     <div class="col-md-3">{{ $transaction->product->user->store_name }}</div>
-              
+
                     <div class="col-md-3">
                       {{$transaction->created_at->format('d M Y')}}
                     </div>
@@ -79,17 +82,18 @@ Store Dashboard Transactions
                     </div>
                   </div>
                 </div>
-                </div>
               </a>
               @endforeach
+            </div>
           </div>
+
         </div>
-
-
       </div>
-    </div>
 
+    </div>
   </div>
+
+</div>
 </div>
 </div>
 
