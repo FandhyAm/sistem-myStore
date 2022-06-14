@@ -61,6 +61,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/dashboard-page/transactions', [DashboardTransactionsController::class, 'transactions'])->name('dashboard-transactions');
     Route::get('/dashboard-page/transactions/{id}', [DashboardTransactionsController::class, 'details'])->name('dashboard-transactions-details');
+    Route::post('/dashboard-page/transactions/{id}', [DashboardTransactionsController::class, 'update'])->name('dashboard-transactions-update');
+
+
 
     Route::get('/dashboard-page/setting', [DashboardSettingController::class, 'store'])->name('dashboard-setting-store');
     Route::get('/dashboard-page/account', [DashboardSettingController::class, 'account'])->name('dashboard-setting-account');
