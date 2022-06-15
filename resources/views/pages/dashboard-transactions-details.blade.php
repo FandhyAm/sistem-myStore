@@ -8,7 +8,7 @@ Store Dashboard Transactions Details
 <div class="section-content section-dashboard-home" data-aos="fade-up">
   <div class="container-fluid">
     <div class="dashboard-heading">
-      <h2 class="dashboard-tittle">{{ $transactions->code }}</h2>
+      <h2 class="dashboard-tittle">#{{ $transaction->code }}</h2>
       <p class="dashboard-subtittle">
         Transactions Details
       </p>
