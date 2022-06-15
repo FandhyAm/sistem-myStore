@@ -47,7 +47,7 @@
                     </a>
 
                     <div class="dropdown-menu">
-                        <a href="{{ route('dashboard-page') }}" class="dropdown-item">Dasbhoard</a>
+                        <a href="{{ route('dashboard-page') }}" class="dropdown-item">Dashboard</a>
                         <a href="{{ route('dashboard-setting-store') }}" class="dropdown-item">Settings</a>
                         <div class="dropdown-divider"></div>
                         <form method="POST" action="{{ route('logout') }}">

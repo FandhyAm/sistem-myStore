@@ -22,10 +22,10 @@ Store Homepage
                                 <img src="images/banner.jpg" class="d-block w-100" alt="First slide">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/banner.jpg" class="d-block w-100" alt="second slide">
+                                <img src="images/banner-3.jpg" class="d-block w-100" alt="second slide">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/banner.jpg" class="d-block w-100" alt="third slide">
+                                <img src="images/banner-2.jpg" class="d-block w-100" alt="third slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#storeCarousel" role="button" data-slide="prev">

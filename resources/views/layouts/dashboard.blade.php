@@ -47,9 +47,8 @@
             class="list-group-item list-group-item-action {{ (request() ->is('/dashboard-page/account')) ? 'active' : '' }}">
             My Account
           </a>
-          <a href="route('logout')" onclick=" event.preventDefault(); .closest('form').submit();"
-            class="list-group-item list-group-item-action">
-            {{ __('Log Out') }}
+          <a href="/" class="list-group-item list-group-item-action">
+            Home
           </a>
         </div>
       </div>
@@ -79,7 +78,7 @@
                   </a>
 
                   <div class="dropdown-menu">
-                    <a href="{{ route('dashboard-page') }}" class="dropdown-item">Dasbhoard</a>
+                    <a href="{{ route('dashboard-page') }}" class="dropdown-item">Dashboard</a>
                     <a href="{{ route('dashboard-setting-store') }}" class="dropdown-item">Settings</a>
                     <div class="dropdown-divider"></div>
                     <form method="POST" action="{{ route('logout') }}">

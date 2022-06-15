@@ -49,9 +49,8 @@
             class="list-group-item list-group-item-action {{ (request() ->is('admin/user*')) ? 'active' : '' }}">
             Users
           </a>
-          <a href="route('logout')" onclick=" event.preventDefault(); .closest('form').submit();"
-            class="list-group-item list-group-item-action">
-            {{ __('Log Out') }}
+          <a href="/" class="list-group-item list-group-item-action">
+            Home
           </a>
         </div>
       </div>
