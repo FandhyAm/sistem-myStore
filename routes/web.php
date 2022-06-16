@@ -78,6 +78,7 @@ Route::prefix('admin')
         Route::resource('user', UserController::class);
         Route::resource('product', ProductController::class);
         Route::resource('product-gallery', ProductGalleryController::class);
+        Route::resource('transaction', TransactionController::class);
     });
 
 
