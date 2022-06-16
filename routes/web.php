@@ -35,8 +35,6 @@ Route::get('/category/{id}', [CategoryController::class, 'detail'])->name('categ
 Route::get('/details/{id}', [DetailController::class, 'index'])->name('detail');
 Route::post('/details/{id}', [DetailController::class, 'add'])->name('detail-add');
 
-Route::post('/checkout/callback', [CheckoutController::class, 'callback'])->name('midtrans-callback');
-
 Route::get('/success', [CartController::class, 'success'])->name('success');
 
 Route::get('/register/success', [RegisterController::class, 'success'])->name('register-success');
@@ -47,6 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/cart/{id}', [CartController::class, 'delete'])->name('cart-delete');
 
     Route::post('/checkout', [CheckoutController::class, 'process'])->name('checkout');
+    Route::post('/checkout/callback', [CheckoutController::class, 'callback'])->name('midtrans-callback');
 
     Route::get('/dashboard-page', [DashboardController::class, 'index'])->name('dashboard-page');
 
@@ -62,7 +61,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard-page/transactions', [DashboardTransactionsController::class, 'transactions'])->name('dashboard-transactions');
     Route::get('/dashboard-page/transactions/{id}', [DashboardTransactionsController::class, 'details'])->name('dashboard-transactions-details');
     Route::post('/dashboard-page/transactions/{id}', [DashboardTransactionsController::class, 'update'])->name('dashboard-transactions-update');
-
 
 
     Route::get('/dashboard-page/setting', [DashboardSettingController::class, 'store'])->name('dashboard-setting-store');
