@@ -18,7 +18,7 @@ Store Success Page
                         <a href="{{ route('dashboard-page') }}" class="btn btn-success w-50 mt-4">
                             My Dashboard
                         </a>
-                        <a href="/" class="btn btn-signup w-50 mt-2">
+                        <a href="" class="btn btn-signup w-50 mt-2">
                             Go to Shopping
                         </a>
                     </div>
